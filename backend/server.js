@@ -20,13 +20,12 @@ app.post("/login", (req, res) => {
         return res.status(400).json({ erro: "Nome de usuário e senha são obrigatórios" });
     }
 
-    usuarios.find((usuario) => {
-        if (usuario.username === username && usuario.password === password) {
-            return res.status(200).json({ message: "Login bem-sucedido", username: usuario.username });
-        }
-
+    const usuario = usuarios.find((u) => u.username === username && u.password === password);
+    if (usuario) {
+        res.status(200).json({ message: "Login bem-sucedido", username: usuario.username });
+    } else {
         res.status(401).json({ erro: "Credenciais inválidas" });
-    });
+    }
 });
 
 app.post("/register", (req, res) => {

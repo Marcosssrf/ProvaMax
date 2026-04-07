@@ -20,12 +20,16 @@ async function login(event) {
         return;
     }
 
+    const resultEl = document.querySelector("p#result, p#erro");
+
     if (response.ok) {
         const data = await response.json();
-        document.getElementById("result").textContent = `Bem-vindo, ${data.username}!`;
+        resultEl.id = "result";
+        resultEl.textContent = `Bem-vindo, ${data.username}!`;
     } else {
         const errorData = await response.json();
-        document.getElementById("result").textContent = `Erro: ${errorData.erro}`;
+        resultEl.id = "erro";
+        resultEl.textContent = `Erro: ${errorData.erro}`;
     }
 }
 
@@ -55,6 +59,8 @@ async function register(event) {
         window.location.href = "index.html";
     } else {
         const errorData = await response.json();
-        document.getElementById("result").textContent = `Erro: ${errorData.erro}`;
+        const resultEl = document.querySelector("p#result, p#erro");
+        resultEl.id = "erro";
+        resultEl.textContent = `Erro: ${errorData.erro}`;
     }
 }
