@@ -1,4 +1,4 @@
-# ProvaMax
+# Prova tipo 1 LING PROGRAM P/ INTERNET 
 
 Marcos Rodrigues Fernandes - 5166265
 
