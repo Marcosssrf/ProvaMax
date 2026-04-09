@@ -1,7 +1,8 @@
 # ProvaMax
 
-Aplicação web simples de login e registro de usuários, com frontend em HTML/CSS/JS e backend em Node.js com Express.
 Marcos Rodrigues Fernandes - 5166265
+
+Aplicação web simples de login e registro de usuários, com frontend em HTML/CSS/JS e backend em Node.js com Express.
 
 ## Estrutura
 
